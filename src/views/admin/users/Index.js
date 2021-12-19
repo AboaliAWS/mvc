@@ -1,31 +1,33 @@
 import React, {Fragment} from "react";
 
-
-
 const Index = (props) => (
     <Fragment>
         <table className="table">
             <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">First name</th>
-                <th scope="col">Last name</th>
-                <th scope="col">avatar</th>
-                <th scope="col">action</th>
+                <th>#</th>
+                <th scope="col">email</th>
+                <th scope="col">name</th>
+                <th scope="col">gender</th>
+                <th scope="col">status</th>
+                <th>action</th>
             </tr>
             </thead>
             <tbody>
-            {console.log(props.data)}
+
             {
                 props.data.map((user, idx) => {
-                    return <tr>
+                    return <tr key={idx}>
+                        <td>{user.id}</td>
                         <td>{user.email}</td>
                         <td>{user.name}</td>
                         <td>{user.gender}</td>
                         <td>{user.status}</td>
                         <td>
-                            <div class="btn-group">
-                                <button className="btn btn-warning" onClick={() => { console.log(user.id) }}>Edit</button>
+                            <div className="btn-group">
+                                <button className="btn btn-warning" onClick={() => {
+                                    props.edit(user.id)
+                                }}>Edit</button>
                                 <button className="btn btn-warning" onClick={() => { console.log(user.id) }}>Delete</button>
                             </div>
                         </td>

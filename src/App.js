@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import React from "react";
 import {Fragment} from "react";
 import {BrowserRouter, Route,Routes,Link} from "react-router-dom";
-import {Store,All} from './controllers/admin/UsersController';
+import {Store,All,Update} from './controllers/admin/UsersController';
 function App() {
   return (
       <Fragment>
@@ -18,14 +18,16 @@ function App() {
                     <Link to={'/users/create'} className="nav-link">Add User</Link>
                   </li>
                   <li className="nav-item">
-                    <Link to={'/users'} className="nav-link">All  Users</Link>
+                    <Link to={'/'} className="nav-link">All  Users</Link>
                   </li>
                 </ul>
               </div>
             </nav> <br />
             <Routes>
+              <Route path='/' element={<All/>} />
               <Route exact path='/users/create' element={<Store/>} />
-              <Route path='/users' element={<All/>} />
+              <Route path='/users/edit/:id' component={<Update/>} />
+
             </Routes>
           </div>
         </BrowserRouter>

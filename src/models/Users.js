@@ -1,23 +1,26 @@
 import Config  from "./Config";
 
+const  model='/users';
+
+
 const all = () => {
-    return Config.get("/users");
+    return Config.get(`${model}`);
 };
 
 const show = id => {
-    return Config.get(`/users/${id}`);
+    return Config.get(`${model}/${id}`);
 };
 
 const store = data => {
-    return Config.post("/users", data);
+    return Config.post(`${model}`, data);
 };
 
 const update = (id, data) => {
-    return Config.put(`/users/${id}`, data);
+    return Config.put(`${model}/${id}`, data);
 };
 
 const remove = id => {
-    return Config.delete(`/users/${id}`);
+    return Config.delete(`${model}/${id}`);
 };
 
 

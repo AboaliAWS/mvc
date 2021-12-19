@@ -12,21 +12,15 @@ const Create = (props) => (
 
             </div>
             <div className="form-group">
-                <label htmlFor="first_name">First name</label>
-                <input type="text" className="form-control" id="first_name"
-                       placeholder="First name" name='first_name' value={props.data.first_name} onChange={props.onChange}/>
+                <label htmlFor="name"> name</label>
+                <input type="text" className="form-control" id="name"
+                       placeholder=" name" name='name' value={props.data.name} onChange={props.onChange}/>
 
             </div>
             <div className="form-group">
-                <label htmlFor="last_name">last name</label>
-                <input type="text" className="form-control" id="last_name"
-                       placeholder="last name" name='last_name' value={props.data.last_name} onChange={props.onChange}/>
-
-            </div>
-            <div className="form-group">
-                <label htmlFor="avatar">avatar</label>
-                <input type="text" className="form-control" id="avatar"
-                       placeholder="avatar" name='avatar' value={props.data.avatar} onChange={props.onChange}/>
+                <label htmlFor="gender">gender</label>
+                <input type="text" className="form-control" id="gender"
+                       placeholder="gender" name='gender' value={props.data.gender} onChange={props.onChange}/>
 
             </div>
 
