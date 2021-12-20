@@ -19,7 +19,7 @@ const update = (id, data) => {
     return Config.put(`${model}/${id}`, data);
 };
 
-const remove = id => {
+const destroy = id => {
     return Config.delete(`${model}/${id}`);
 };
 
@@ -30,5 +30,5 @@ export default {
     show,
     store,
     update,
-    remove,
+    destroy,
 };

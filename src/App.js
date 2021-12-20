@@ -3,32 +3,28 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from "react";
 import {Fragment} from "react";
-import {BrowserRouter, Route,Routes,Link} from "react-router-dom";
+import {BrowserRouter, Route, Routes, Link, Navigate} from "react-router-dom";
 import {Store,All,Update} from './controllers/admin/UsersController';
+import Admin from "./routes/Admin";
+import Company from "./routes/Company";
+import User from "./routes/User";
+import Navbar from "./components/layouts/Navbar";
 function App() {
   return (
       <Fragment>
         <BrowserRouter>
           <div className="container">
-            <nav className="btn btn-warning navbar navbar-expand-lg navheader">
-              <div className="collapse navbar-collapse" >
+            <Navbar/>
+             <br />
 
-                <ul className="navbar-nav mr-auto">
-                  <li className="nav-item">
-                    <Link to={'/users/create'} className="nav-link">Add User</Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link to={'/'} className="nav-link">All  Users</Link>
-                  </li>
-                </ul>
-              </div>
-            </nav> <br />
-            <Routes>
-              <Route path='/' element={<All/>} />
-              <Route exact path='/users/create' element={<Store/>} />
-              <Route path='/users/edit/:id' component={<Update/>} />
 
-            </Routes>
+            {/*routes*/}
+
+            <Admin/>
+            {/*<Company/>*/}
+            {/*  <User/>*/}
+
+
           </div>
         </BrowserRouter>
       </Fragment>

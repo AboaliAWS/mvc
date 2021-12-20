@@ -28,7 +28,9 @@ const Index = (props) => (
                                 <button className="btn btn-warning" onClick={() => {
                                     props.edit(user.id)
                                 }}>Edit</button>
-                                <button className="btn btn-warning" onClick={() => { console.log(user.id) }}>Delete</button>
+                                <button className="btn btn-warning" onClick={() => {
+                                    props.destroy(user.id)
+                                }}>Delete</button>
                             </div>
                         </td>
                     </tr>
